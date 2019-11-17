@@ -1,5 +1,9 @@
 FHEM-unofficial-updates --- latest changes:
   2019-11-17
+    - widget_filelog_3rd.js (extension of widget_filelog.js)
+      - new classes: "filelog-lines" and "filelog-line"
+      - new attributes: data-ago and data-newest-first
+      ! further details in widget_filelog_3rd.changed.txt
     - widget_knob_3rd.js (extension of widget_knob.js)
       - coloring, depending on values
-      - further details in widget_knob_3rd.changed.txt
+      ! further details in widget_knob_3rd.changed.txt
