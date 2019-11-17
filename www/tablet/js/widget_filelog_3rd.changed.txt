@@ -1,0 +1,23 @@
+!!!
+!!! data-type="widget_filelog_3rd"
+!!!
+
+*** 2019-04-20 ***
+  - new classes: "filelog-lines" (valid for html-tag surrounding all the log lines)
+                 "filelog-line"  (valid for html-tag surrounding one log line)
+
+*** 2019-04-17 ***
+  - new attribute: data-ago="today" [default=0]
+
+    example: data-ago="today"
+
+    meaning: [value>0] ... the widget will load older log lines; value means minutes
+             ["today"] ... only log lines from today will be loaded/displayed
+
+*** 2019-03-10 ***
+  - new attribute: data-newest-first [default=0]
+
+    example: data-newest-first="1"
+
+    meaning: "1" ... the newest log line will be the first line
+             "0" ... the newest log line will be the last line

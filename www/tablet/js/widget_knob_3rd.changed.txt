@@ -1,3 +1,7 @@
+!!!
+!!! data-type="widget_knob_3rd"
+!!!
+
 *** 2019-11-17 ***
   - coloring, depending on values
 
