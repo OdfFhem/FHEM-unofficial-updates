@@ -1,2 +1,2 @@
 # FHEM-additional-updates
-Additional updates for FHEM
+Additional updates for FHEM and FTUI, ...
