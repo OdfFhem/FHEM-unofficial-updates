@@ -1,0 +1,15 @@
+*** 2019-11-17 ***
+  - coloring, depending on values
+
+    new attributes: data-limits
+                    data-bgcolors
+                    data-fgcolors
+                    data-nomcolors
+
+    example: data-limits='[40,70,100]'
+             data-bgcolors='["lightgray","darkgray","gray"]'
+             data-fgcolors='["gray","yellow","red"]'
+             data-nomcolors='["gray","yellow","red"]'
+    meaning:  0- 40 --> 1st column
+             41- 70 --> 2nd column
+             71-100 --> 3rd column
