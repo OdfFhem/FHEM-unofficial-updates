@@ -209,37 +209,34 @@ var Modul_knob_3rd = function () {
                             ftui.log(3, me.widgetname + ' dev:' + dev + ' par:' + par + ' change ' + elem.data('device') + ':knob to ' + val);
                             
                             var limits = elem.data('limits');
-                            if(limits){
-                              for (var i = 0; i < limits.length; i++) {
-                                if(val < limits[i]){
-                                  var colors;
-                                  
-                                  colors = elem.data('bgcolors');
-                                  if (colors) {
-                                    knob_elem.trigger('configure',{
-                                        'bgColor': colors[i]
-                                    });
-                                  }
+                            if (limits && $.isArray(limits)) {
+                              var i = ftui.indexOfGeneric(limits, val); //idx
 
-                                  colors = elem.data('fgcolors');
-                                  if (colors) {
-                                    knob_elem.trigger('configure',{
-                                        'fgColor': colors[i]
-                                    });
-                                  }
+                              if (i > -1) {
+                                var colors;
+                                
+                                colors = elem.data('bgcolors');
+                                if (colors) {
+                                  knob_elem.trigger('configure',{
+                                      'bgColor': (ftui.getStyle('.' + colors[i], 'color') || colors[i])
+                                  });
+                                }
 
-                                  colors = elem.data('nomcolors');
-                                  if (colors) {
-                                    knob_elem.trigger('configure',{
-                                        'nomColor': colors[i]
-                                    });
-                                  }
+                                colors = elem.data('fgcolors');
+                                if (colors) {
+                                  knob_elem.trigger('configure',{
+                                      'fgColor': (ftui.getStyle('.' + colors[i], 'color') || colors[i])
+                                  });
+                                }
 
-                                  break;
+                                colors = elem.data('nomcolors');
+                                if (colors) {
+                                  knob_elem.trigger('configure',{
+                                      'nomColor': (ftui.getStyle('.' + colors[i], 'color') || colors[i])
+                                  });
                                 }
                               }
-                            }                            
-                            
+                            }
                         }
                         knob_elem.css({
                             visibility: 'visible'
