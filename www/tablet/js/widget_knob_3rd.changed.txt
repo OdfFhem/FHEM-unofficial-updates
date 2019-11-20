@@ -2,6 +2,31 @@
 !!! data-type="widget_knob_3rd"
 !!!
 
+*** 2019-11-20 ***
+  - coloring, depending on values
+
+    Changed meaning of numeric limit-array-values:
+    - an array-value in old version meant "value <= array-value";
+    - an array-value in new version means "value >= array-value".
+    In addition, you can now use regular expressions.
+    The new behavior corresponds to the other widgets,
+    e.g. label.
+
+    example: data-limits='[0,40,70]'
+             data-bgcolors='["lightgray","darkgray","gray"]'
+             data-fgcolors='["gray","yellow","red"]'
+             data-nomcolors='["gray","yellow","red"]'
+    meaning: value >= 0  --> 1st column
+             value >= 40 --> 2nd column
+             value >= 70 --> 3rd column
+
+    example: data-limits='["[0-9]","[1-9][0-9]","[1-9][0-9]{2}"]' 
+             data-bgcolors='["lightgray","darkgray","gray"]'
+             data-fgcolors='["gray","yellow","red"]'
+             data-nomcolors='["gray","yellow","red"]'
+    meaning: value is single-digit --> 1st column
+             value is double-digit --> 2nd column
+             value is triple-digit --> 3rd column
 *** 2019-11-17 ***
   - coloring, depending on values
 
@@ -14,6 +39,6 @@
              data-bgcolors='["lightgray","darkgray","gray"]'
              data-fgcolors='["gray","yellow","red"]'
              data-nomcolors='["gray","yellow","red"]'
-    meaning:  0- 40 --> 1st column
-             41- 70 --> 2nd column
-             71-100 --> 3rd column
+    meaning: value <= 40  --> 1st column
+             value <= 70  --> 2nd column
+             value <= 100 --> 3rd column
