@@ -6,12 +6,18 @@ Unofficial updates for FHEM and FTUI and ...
 - If you want to update only all unofficial files for FTUI, use **controls_unofficial_ftui.txt**
 
 ## Downloading all files with usage of a controlfile
-- update add https://raw.githubusercontent.com/OdfFhem/FHEM-unofficial-updates/master/controlfile
-- update check https://raw.githubusercontent.com/OdfFhem/FHEM-unofficial-updates/master/controlfile
-- update all https://raw.githubusercontent.com/OdfFhem/FHEM-unofficial-updates/master/controlfile
+```
+  - update add https://raw.githubusercontent.com/OdfFhem/FHEM-unofficial-updates/master/<controlfile>
+  - update check https://raw.githubusercontent.com/OdfFhem/FHEM-unofficial-updates/master/<controlfile>
+  - update all https://raw.githubusercontent.com/OdfFhem/FHEM-unofficial-updates/master/<controlfile>
+```
 
 ## Downloading single files
 - with usage of a controlfile:
-  - update <singlefile> https://raw.githubusercontent.com/OdfFhem/FHEM-unofficial-updates/master/controlfile
+```
+  - update <singlefile> https://raw.githubusercontent.com/OdfFhem/FHEM-unofficial-updates/master/<controlfile>
+```
 - without usage of a controlfile:
+```
   - depending on the possibilities of the GitHub repository
+```
