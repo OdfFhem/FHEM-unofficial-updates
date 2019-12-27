@@ -9,12 +9,21 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: update controls files
+    - name: generate controls_1.txt
       uses: fhem/fhem-controls-actions@master
       with:
         directory: www/tablet/js
         extension: .js
-        filename: controls_test.txt
+        filename: controls_1.txt
+    - name: generate controls_2.txt
+      uses: fhem/fhem-controls-actions@master
+      with:
+        directory: www/tablet/css
+        extension: .css
+        filename: controls_2.txt
+    - name: finalize generated files
+      run: |
+        cat controls_1.txt controls_2.txt > controls_test.txt
     - name: Commit files
       run: |
         git config --global user.email "action@github.com"
