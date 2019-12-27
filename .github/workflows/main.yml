@@ -19,4 +19,5 @@ jobs:
       uses: fhem/fhem-controls-actions@master
       with:
         directory: www
+        extension: .js
         filename: controls_test.txt 
