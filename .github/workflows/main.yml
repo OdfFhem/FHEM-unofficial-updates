@@ -17,9 +17,10 @@ jobs:
         filename: controls_test.txt
     - name: Commit files
       run: |
-        git config --local user.email "action@github.com"
+        git config --global user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Add changes" -a
+        git add controls_test.txt || true
+        git commit controls_EPG.txt -m "Automatic updated via Action" || true
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
