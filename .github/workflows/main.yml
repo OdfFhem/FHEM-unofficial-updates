@@ -18,4 +18,5 @@ jobs:
     - name: update controls files
       uses: fhem/fhem-controls-actions@master
       with:
-        filename: controls_EPG.txt 
+        directory: www
+        filename: controls_test.txt 
