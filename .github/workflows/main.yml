@@ -20,7 +20,7 @@ jobs:
         git config --global user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add controls_test.txt || true
-        git commit controls_test.txt -m "Automatic updated via Action" || true
+        git commit controls_test.txt -m "Updated via Action" || true
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
