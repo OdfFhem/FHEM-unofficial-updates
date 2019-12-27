@@ -12,7 +12,7 @@ jobs:
     - name: update controls files
       uses: fhem/fhem-controls-actions@master
       with:
-        directory: www
+        directory: www/tablet/js
         extension: .js
         filename: controls_test.txt
     - name: Commit files
