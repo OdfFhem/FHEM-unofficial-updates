@@ -8,7 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@master
+    - name: This action checks-out your repository under GITHUB_WORKSPACE
+      uses: actions/checkout@v2
     - name: generate controls_1.txt
       uses: fhem/fhem-controls-actions@master
       with:
