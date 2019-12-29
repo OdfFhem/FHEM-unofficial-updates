@@ -1,0 +1,2 @@
+2019-12-29, 07:04:41 UTC (Sun)
+  Resetting history_test.txt
