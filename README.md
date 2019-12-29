@@ -1,3 +1,5 @@
+![](https://github.com/OdfFhem/FHEM-unofficial-updates/workflows/CI/badge.svg)
+
 # FHEM-unofficial-updates
 Unofficial updates for FHEM and FTUI and ...
 
