@@ -4,85 +4,39 @@ on: [push]
 
 jobs:
   build:
-
+    env:
+      histFILE="history_test.txt"
     runs-on: ubuntu-latest
-
     steps:
-      # inspect information that is accessible in each context (before)
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJson(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
-      # This step checks out a copy of your repository.
-      - name: This action checks-out your repository under GITHUB_WORKSPACE
+      # This action checks-out your repository under GITHUB_WORKSPACE
+      - name: checkout your repository
         uses: actions/checkout@v2
-      - name: generate controls_1.txt
+      - name: generate file controls_1.txt
         uses: fhem/fhem-controls-actions@master
         with:
           directory: www/tablet/js
           extension: .js
           filename: controls_1.txt
-      - name: generate controls_2.txt
+      - name: generate file controls_2.txt
         uses: fhem/fhem-controls-actions@master
         with:
           directory: www/tablet/css
           extension: .css
           filename: controls_2.txt
-      - name: generate final files
+      - name: generate final control files
         run: |
           cat controls_1.txt controls_2.txt > controls_test.txt
+      - name: update history_test.txt
+        run: |
+          histDATE=$(date +"%Y-%m-%d")
+          echo "$histDATE" > temp && cat $histFILE >> temp 2>/dev/null && mv temp $histFILE
       - name: Commit generated files
         run: |
           git config --global user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add controls_test.txt || true
-          git commit controls_test.txt -m "Updated via Action" || true
+          git add $histFILE controls_test.txt || true
+          git commit $histFILE controls_test.txt -m "Updated via Action" || true
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-      # inspect information that is accessible in each context (after)
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      - name: Dump job context
-        env:
-          JOB_CONTEXT: ${{ toJson(job) }}
-        run: echo "$JOB_CONTEXT"
-      - name: Dump steps context
-        env:
-          STEPS_CONTEXT: ${{ toJson(steps) }}
-        run: echo "$STEPS_CONTEXT"
-      - name: Dump runner context
-        env:
-          RUNNER_CONTEXT: ${{ toJson(runner) }}
-        run: echo "$RUNNER_CONTEXT"
-      - name: Dump strategy context
-        env:
-          STRATEGY_CONTEXT: ${{ toJson(strategy) }}
-        run: echo "$STRATEGY_CONTEXT"
-      - name: Dump matrix context
-        env:
-          MATRIX_CONTEXT: ${{ toJson(matrix) }}
-        run: echo "$MATRIX_CONTEXT"
