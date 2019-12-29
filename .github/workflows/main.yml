@@ -28,7 +28,7 @@ jobs:
           cat controls_1.txt controls_2.txt > controls_test.txt
       - name: update history_test.txt
         run: |
-          histDATE=$(date +"%Y-%m-%d, %H:%M:%S")
+          histDATE=$(date +"%Y-%m-%d, %H:%M:%S %Z (%a)")
           histLINE="  $(git log -1 --pretty=%B)"
           echo -e "$histDATE\n$histLINE" > temp && echo -n "" >> $histFILE && cat $histFILE >> temp && mv temp $histFILE
       - name: Commit generated files
