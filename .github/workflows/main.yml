@@ -5,7 +5,7 @@ on: [push]
 jobs:
   build:
     env:
-      histFILE="history_test.txt"
+      histFILE=history_test.txt
     runs-on: ubuntu-latest
     steps:
       # This action checks-out your repository under GITHUB_WORKSPACE
