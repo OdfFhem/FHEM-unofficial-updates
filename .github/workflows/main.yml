@@ -29,7 +29,8 @@ jobs:
       - name: update history_test.txt
         run: |
           histDATE=$(date +"%Y-%m-%d")
-          echo -n "" >> $histFILE && echo "$histDATE" > temp && cat $histFILE >> temp 2>/dev/null && mv temp $histFILE
+          histLINE="$(git log -1 --pretty=%B)"
+          echo -e "$histDATE\n$histLINE" > temp && echo -n "" >> $histFILE && cat $histFILE >> temp && mv temp $histFILE
       - name: Commit generated files
         run: |
           git config --global user.email "action@github.com"
