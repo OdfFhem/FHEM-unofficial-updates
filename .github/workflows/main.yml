@@ -29,7 +29,7 @@ jobs:
       - name: update history_test.txt
         run: |
           histDATE=$(date +"%Y-%m-%d")
-          echo "$histDATE" > temp && cat $histFILE >> temp 2>/dev/null && mv temp $histFILE
+          echo -n "" >> $histFILE && echo "$histDATE" > temp && cat $histFILE >> temp 2>/dev/null && mv temp $histFILE
       - name: Commit generated files
         run: |
           git config --global user.email "action@github.com"
