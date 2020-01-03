@@ -1,0 +1,15 @@
+!!!
+!!! data-type="widget_weather_3rd"
+!!!
+
+*** 2019-12-07 ***
+  - adjust warn display
+
+    new attribute data-warn-class
+    - with usage of data-warn-class size of warn-value
+      is independent from size of image
+    new attribute data-warn-icon
+    - instead of a value you can display a special icon
+
+    example: data-warn-class="bigger"
+             data-warn-icon="fa-exclamation"
