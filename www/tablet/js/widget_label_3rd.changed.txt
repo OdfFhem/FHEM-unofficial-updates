@@ -1,0 +1,15 @@
+!!!
+!!! data-type="widget_label_3rd"
+!!!
+
+*** 2019-11-20 ***
+  - adjust coloring
+
+    coloring happens after applying of data-substitution and data-map-get;
+    old method ignored these value-changing attributes.
+    
+    example: --- reading value in FHEM is 4992
+             !!! old coloring based on 4992
+             data-substitution='["4992","2994"]'
+             data-map-get='{"2994":"9924"}'
+             !!! new coloring based on 9924
