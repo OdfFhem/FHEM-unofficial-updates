@@ -6,8 +6,8 @@
   - coloring, depending on values
 
     Changed meaning of numeric limit-array-values:
-    - an array-value in old version meant "value <= array-value";
-    - an array-value in new version means "value >= array-value".
+    - an array-value in old version meant "value <= array-value"
+    - an array-value in new version means "value >= array-value"
     In addition, you can now use regular expressions.
     The new behavior corresponds to the other widgets,
     e.g. label.
