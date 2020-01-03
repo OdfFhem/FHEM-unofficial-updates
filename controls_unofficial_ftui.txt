@@ -1,4 +1,6 @@
-DIR www/tablet/js
+DIR www/tablet/css
 CRE 2019-11-25_04:17:00 1 www/tablet/css/test_test_test_user.css
-UPD 2019-11-20_10:17:39 9870 www/tablet/js/widget_knob_3rd.js
+DIR www/tablet/js
 UPD 2019-11-17_18:23:00 7216 www/tablet/js/widget_filelog_3rd.js
+UPD 2019-11-20_10:17:39 9870 www/tablet/js/widget_knob_3rd.js
+UPD 2019-11-20_09:43:30 6618 www/tablet/js/widget_label_3rd.js
