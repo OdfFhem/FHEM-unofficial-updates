@@ -1,3 +1,5 @@
+2020-01-03, 17:23:32 UTC (Fri)
+  Update controls_unofficial_ftui.txt
 2020-01-03, 17:22:15 UTC (Fri)
   latest changes
 2020-01-03, 17:20:51 UTC (Fri)
