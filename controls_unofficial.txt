@@ -6,4 +6,4 @@ UPD 2019-11-20_10:17:39 9870 www/tablet/js/widget_knob_3rd.js
 UPD 2019-11-20_09:43:30 6618 www/tablet/js/widget_label_3rd.js
 UPD 2020-01-03_18:21:58 72469 www/tablet/js/widget_weather_3rd.js
 DIR www/tablet/lib
-UPD 2020-01-14_07:55:42 44245 www/tablet/lib/jquery.gridster.min_3rd.js
+UPD 2019-11-26_17:07:00 44245 www/tablet/lib/jquery.gridster.min_3rd.js
