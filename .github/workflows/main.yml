@@ -23,9 +23,15 @@ jobs:
           directory: www/tablet/css
           extension: .css
           filename: controls_2.txt
+      - name: generate file controls_3.txt
+        uses: fhem/fhem-controls-actions@master
+        with:
+          directory: www/tablet/lib
+          extension: .js
+          filename: controls_3.txt
       - name: generate final control files
         run: |
-          cat controls_1.txt controls_2.txt > controls_test.txt
+          cat controls_1.txt controls_2.txt controls_3.txt > controls_test.txt
       - name: update history_test.txt
         run: |
           histDATE=$(date +"%Y-%m-%d, %H:%M:%S %Z (%a)")
