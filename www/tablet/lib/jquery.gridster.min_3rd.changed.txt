@@ -1,0 +1,8 @@
+!!!
+!!! class="gridster"
+!!!
+
+*** 2019-11-26 ***
+  - deactivated auto arrange of grid elements
+    +++ r.can_go_widget_up=function(t){return 0; var i=t.row+t.size_y-1,e=!0,s=[],r=1e4;
+    --- r.can_go_widget_up=function(t){var i=t.row+t.size_y-1,e=!0,s=[],r=1e4;
